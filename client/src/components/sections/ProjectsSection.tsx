@@ -67,7 +67,7 @@ const projects: Project[] = [
   {
     title: "Wacom 3D Scroll",
     description:
-      "Bringing a luxury feel to the Wacom website by adding the ability to move a tablet in 3D. Allows the user to see the tablet from different angles. Uses 290 images injected into a canvas element.",
+      "Bringing a luxury feel to the Wacom website by adding the ability to move a tablet in 3D. Allows the user to see the tablet from different angles. Uses 290 images injected into a canvas element. Note: scroll down page for demo. Best viewed on desktop.",
     technologies: ["JavaScript", "HTML", "CSS/Canvas", "Magento"],
     githubUrl: "https://github.com/thestereoscopics/3d-scroll",
     liveUrl:
