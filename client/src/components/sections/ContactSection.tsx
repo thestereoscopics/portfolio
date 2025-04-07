@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { Github, Linkedin, Mail, MapPin, Send } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Send, Download } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Label } from "@/components/ui/label";
 
@@ -216,7 +216,16 @@ const ContactSection = () => {
                     </p>
                   </div>
                 </div>
-
+                <div className='flex items-center'>
+                  <Download className='text-portfolio-600 dark:text-portfolio-400 h-5 w-5 mr-3' />
+                  <a
+                    href='/JeremySellResume.docx'
+                    download
+                    className='text-slate-700 dark:text-slate-300 hover:text-portfolio-600 dark:hover:text-portfolio-400'
+                  >
+                    Download Resume
+                  </a>
+                </div>
                 <div className='flex items-center'>
                   <Mail className='text-portfolio-600 dark:text-portfolio-400 h-5 w-5 mr-3' />
                   <a
