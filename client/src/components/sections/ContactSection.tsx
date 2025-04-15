@@ -216,16 +216,47 @@ const ContactSection = () => {
                     </p>
                   </div>
                 </div>
-                <div className='flex items-center'>
+                <div className='flex flex-col gap-4'>
+                  <div className='flex items-center'>
+                    <Download className='text-portfolio-600 dark:text-portfolio-400 h-5 w-5 mr-2' />
+                    <span className='text-slate-700 dark:text-slate-300'>
+                      Download Resume
+                    </span>
+                  </div>
+                  <div className='flex gap-4 pr-7'>
+                    <a
+                      href='/JeremySellResume.docx'
+                      download
+                      className='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 group'
+                    >
+                      DOCX
+                    </a>
+                    <a
+                      href='/JeremySellResume.pdf'
+                      download
+                      className='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 group'
+                    >
+                      PDF
+                    </a>
+                  </div>
+                </div>
+                {/* <div className='flex items-center'>
                   <Download className='text-portfolio-600 dark:text-portfolio-400 h-5 w-5 mr-3' />
                   <a
                     href='/JeremySellResume.docx'
                     download
                     className='text-slate-700 dark:text-slate-300 hover:text-portfolio-600 dark:hover:text-portfolio-400'
                   >
-                    Download Resume
+                    Download Resume (DOCX)
                   </a>
-                </div>
+                  <a
+                    href='/JeremySellResume.pdf'
+                    download
+                    className='text-slate-700 dark:text-slate-300 hover:text-portfolio-600 dark:hover:text-portfolio-400'
+                  >
+                    (or PDF)
+                  </a>
+                </div> */}
                 <div className='flex items-center'>
                   <Mail className='text-portfolio-600 dark:text-portfolio-400 h-5 w-5 mr-3' />
                   <a
