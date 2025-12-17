@@ -198,32 +198,34 @@ const ContactSection = () => {
           </Card>
 
           {/* Contact Information */}
-          <div className='flex flex-col justify-between'>
+          <div className='flex flex-col justify-between items-center lg:items-start'>
             <div className='mb-8'>
-              <h3 className='text-xl font-semibold text-slate-900 dark:text-white mb-6'>
+              <h3 className='text-xl font-semibold text-center text-slate-900 dark:text-white mb-6 lg:text-left'>
                 Contact Information
               </h3>
 
               <div className='space-y-4'>
-                <div className='flex items-start'>
-                  <MapPin className='text-portfolio-600 dark:text-portfolio-400 h-5 w-5 mt-1 mr-3' />
-                  <div>
+                <div className='flex flex-col gap-2 items-center lg:items-start'>
+                  <div className='flex items-center'>
+                    <MapPin className='text-portfolio-600 dark:text-portfolio-400 h-5 w-5 mt-1 mr-3' />
                     <p className='text-slate-700 dark:text-slate-300'>
                       Portland, Oregon
                     </p>
+                  </div>
+                  <div className='flex gap-4'>
                     <p className='text-slate-500 dark:text-slate-400 text-sm'>
                       Available for remote work or in the ❤️ of Portland
                     </p>
                   </div>
                 </div>
-                <div className='flex flex-col gap-4'>
+                <div className='flex flex-col gap-2 items-center lg:items-start'>
                   <div className='flex items-center'>
                     <Download className='text-portfolio-600 dark:text-portfolio-400 h-5 w-5 mr-2' />
                     <span className='text-slate-700 dark:text-slate-300'>
                       Download Resume
                     </span>
                   </div>
-                  <div className='flex gap-4 pr-7'>
+                  <div className='flex gap-4'>
                     <a
                       href='/JeremySellResume.docx'
                       download
@@ -240,24 +242,7 @@ const ContactSection = () => {
                     </a>
                   </div>
                 </div>
-                {/* <div className='flex items-center'>
-                  <Download className='text-portfolio-600 dark:text-portfolio-400 h-5 w-5 mr-3' />
-                  <a
-                    href='/JeremySellResume.docx'
-                    download
-                    className='text-slate-700 dark:text-slate-300 hover:text-portfolio-600 dark:hover:text-portfolio-400'
-                  >
-                    Download Resume (DOCX)
-                  </a>
-                  <a
-                    href='/JeremySellResume.pdf'
-                    download
-                    className='text-slate-700 dark:text-slate-300 hover:text-portfolio-600 dark:hover:text-portfolio-400'
-                  >
-                    (or PDF)
-                  </a>
-                </div> */}
-                <div className='flex items-center'>
+                <div className='flex items-center justify-center lg:justify-start'>
                   <Mail className='text-portfolio-600 dark:text-portfolio-400 h-5 w-5 mr-3' />
                   <a
                     href='mailto:thestereoscopics@gmail.com'
@@ -270,7 +255,7 @@ const ContactSection = () => {
             </div>
 
             <div>
-              <h3 className='text-xl font-semibold text-slate-900 dark:text-white mb-6'>
+              <h3 className='text-xl font-semibold text-center text-slate-900 mb-6 dark:text-white lg:text-left'>
                 Connect with me
               </h3>
 
