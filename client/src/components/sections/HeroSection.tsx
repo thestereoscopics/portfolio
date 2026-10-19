@@ -27,7 +27,7 @@ const HeroSection = () => {
       id='hero'
       className='min-h-screen flex items-center justify-center relative overflow-hidden dark:bg-gray-950'
     >
-      <div className='absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-950 z-0' />
+      <div className='absolute inset-0 bg-linear-to-r from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-950 z-0' />
 
       {/* Decorative elements */}
       <div className='absolute top-20 right-10 w-96 h-96 bg-portfolio-200 dark:bg-portfolio-700/30 rounded-full opacity-20 blur-3xl' />

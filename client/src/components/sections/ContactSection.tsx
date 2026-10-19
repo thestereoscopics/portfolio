@@ -14,6 +14,7 @@ const ContactSection = () => {
     email: "",
     subject: "",
     message: "",
+    website: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,8 +34,7 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://jeremysell.com/send-email", {
-        // const response = await fetch("http://localhost:3000/send-email", {
+      const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -51,6 +51,7 @@ const ContactSection = () => {
           email: "",
           subject: "",
           message: "",
+          website: "",
         });
 
         toast({
@@ -64,7 +65,7 @@ const ContactSection = () => {
         toast({
           title: "Message failed to send",
           description: `There was an error sending your message: ${
-            data?.error?.text || "Unknown error"
+            data?.error || "Unknown error"
           }`,
           variant: "destructive",
         });
@@ -75,9 +76,8 @@ const ContactSection = () => {
 
       toast({
         title: "Message failed to send",
-        description: `There was an error sending your message: ${
-          error.text || "Unknown error"
-        }`,
+        description:
+          "There was an error sending your message. Please try again later.",
         variant: "destructive",
       });
     }
@@ -88,7 +88,7 @@ const ContactSection = () => {
       id='contact'
       className='py-20 md:py-32 bg-white dark:bg-gray-950 relative'
     >
-      <div className='absolute inset-0 bg-gradient-to-b from-white to-portfolio-50 dark:from-gray-950 dark:to-gray-900 z-0' />
+      <div className='absolute inset-0 bg-linear-to-b from-white to-portfolio-50 dark:from-gray-950 dark:to-gray-900 z-0' />
 
       <div className='container mx-auto px-4 relative z-10'>
         <h2 className='text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 text-center'>
@@ -104,6 +104,18 @@ const ContactSection = () => {
                 Send a Message
               </h3>
               <form onSubmit={handleSubmit} className='space-y-6'>
+                {/* Honeypot: hidden from people, bots fill it in */}
+                <input
+                  type='text'
+                  name='website'
+                  value={formData.website}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete='off'
+                  aria-hidden='true'
+                  className='hidden'
+                />
+
                 <div>
                   <Label
                     htmlFor='name'
@@ -229,14 +241,14 @@ const ContactSection = () => {
                     <a
                       href='/JeremySellResume.docx'
                       download
-                      className='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 group'
+                      className='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 group'
                     >
                       DOCX
                     </a>
                     <a
                       href='/JeremySellResume.pdf'
                       download
-                      className='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 group'
+                      className='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 group'
                     >
                       PDF
                     </a>
@@ -245,10 +257,10 @@ const ContactSection = () => {
                 <div className='flex items-center justify-center lg:justify-start'>
                   <Mail className='text-portfolio-600 dark:text-portfolio-400 h-5 w-5 mr-3' />
                   <a
-                    href='mailto:thestereoscopics@gmail.com'
+                    href='mailto:contact@jeremysell.com'
                     className='text-slate-700 dark:text-slate-300 hover:text-portfolio-600 dark:hover:text-portfolio-400'
                   >
-                    thestereoscopics@gmail.com
+                    contact@jeremysell.com
                   </a>
                 </div>
               </div>
@@ -277,7 +289,7 @@ const ContactSection = () => {
                 </a>
 
                 <a
-                  href='mailto:thestereoscopics@gmail.com'
+                  href='mailto:contact@jeremysell.com'
                   className='bg-slate-100 hover:bg-portfolio-100 text-slate-700 hover:text-portfolio-600 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-slate-300 dark:hover:text-portfolio-400 p-3 rounded-full transition-colors'
                   aria-label='Email link'
                 >

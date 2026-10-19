@@ -34,7 +34,7 @@ const Surprise = () => {
     <div className='min-h-screen flex flex-col dark:bg-gray-950'>
       <Navbar />
 
-      <main className='flex-grow flex items-center justify-center pt-24 pb-12 px-4 bg-gradient-to-br from-portfolio-50 to-indigo-50 dark:from-gray-900 dark:to-gray-950'>
+      <main className='grow flex items-center justify-center pt-24 pb-12 px-4 bg-linear-to-br from-portfolio-50 to-indigo-50 dark:from-gray-900 dark:to-gray-950'>
         <div className='max-w-3xl mx-auto text-center'>
           <div className='mb-8 flex justify-center'>
             <div className='bg-portfolio-100 dark:bg-gray-800 p-4 rounded-full'>
